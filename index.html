@@ -418,8 +418,8 @@
             <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 30px;">Professional Experience & Trusted By</h2>
             <div class="marquee-wrapper">
                 <div class="marquee-content">
-                    <img src="company logo/imagses.jpg" alt="Company Logo" loading="lazy">
-                    <img src="company logo/imagses.jpg" alt="Company Logo" loading="lazy">
+                    <img src="company logo/images (1).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (2).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (3).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (4).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (5).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.png" alt="Company Logo" loading="lazy"><img src="company logo/imagses.jpg" alt="Company Logo" loading="lazy"><img src="Elabdfoods.png" alt="Company Logo" loading="lazy"><img src="falcon.png" alt="Company Logo" loading="lazy"><img src="Farag Allah.png" alt="Company Logo" loading="lazy">
+                    <img src="company logo/images (1).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (2).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (3).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (4).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images (5).jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.jpg" alt="Company Logo" loading="lazy"><img src="company logo/images.png" alt="Company Logo" loading="lazy"><img src="company logo/imagses.jpg" alt="Company Logo" loading="lazy"><img src="Elabdfoods.png" alt="Company Logo" loading="lazy"><img src="falcon.png" alt="Company Logo" loading="lazy"><img src="Farag Allah.png" alt="Company Logo" loading="lazy">
                 </div>
             </div>
         </section>
@@ -2318,7 +2318,7 @@
                         entry.target.classList.add('is-visible');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, { rootMargin: "0px" });
 
             document.querySelectorAll('.fade-in-section').forEach((section) => {
                 observer.observe(section);
@@ -2347,7 +2347,7 @@
                         counterObserver.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.5 });
+            }, { rootMargin: "0px" });
             document.querySelectorAll('.stats-section').forEach(s => counterObserver.observe(s));
         });
 

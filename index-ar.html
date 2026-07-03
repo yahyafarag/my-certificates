@@ -338,24 +338,33 @@
     
     /* Responsive */
     @media (max-width: 768px) {
+        body {
+            overflow: auto; /* Allow body scroll on mobile */
+        }
         .dashboard-container {
             flex-direction: column;
-            overflow-y: auto;
+            height: auto;
+            min-height: 100vh;
         }
         .profile-sidebar {
             width: 100%;
             border-right: none;
             border-bottom: 1px solid var(--glass-border);
             padding: 1.5rem;
+            position: relative; /* Remove fixed height constraint */
         }
         .infographic-stage {
             min-height: 800px;
+            overflow-y: visible;
         }
         .slide-title {
             font-size: 2rem;
         }
         .stat-number {
             font-size: 2.5rem;
+        }
+        .stat-card {
+            padding: 1.5rem;
         }
         html[dir="rtl"] .profile-sidebar {
             border-left: none;
@@ -400,72 +409,90 @@
                 <div class="progress-segment"><div class="progress-fill"></div></div>
                 <div class="progress-segment"><div class="progress-fill"></div></div>
                 <div class="progress-segment"><div class="progress-fill"></div></div>
+                <div class="progress-segment"><div class="progress-fill"></div></div>
             </div>
             
             <div class="slides-container">
                 
         <!-- Slide 1: Executive -->
         <div class="slide" id="slide-0">
-            <h2 class="slide-title">التأثير التنفيذي</h2>
+            <h2 class="slide-title">الملف التنفيذي</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">138</span>
                     <span class="stat-label">مهندساً وفنياً في الفريق</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">مصانع إنتاج كبرى</span>
-                </div>
-                <div class="stat-card">
                     <span class="stat-number">200+</span>
                     <span class="stat-label">موقع على مستوى الجمهورية</span>
                 </div>
                 <div class="stat-card highlight">
-                    <span class="stat-number">33%-</span>
-                    <span class="stat-label">وفر الميزانية (5 مليون جنيه شهرياً)</span>
+                    <span class="stat-number">5 مليون</span>
+                    <span class="stat-label">توفير شهري في الميزانية (ج.م)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">فرع جديد تم بناؤه</span>
                 </div>
             </div>
-            <p class="slide-desc">نجحت في بناء وتطبيق نظام إدارة صيانة (CMMS) مخصص من الصفر، مما أحدث ثورة في إدارة العمليات الهندسية على مستوى محفظة الشركة بالكامل.</p>
+            <p class="slide-desc">مدير تنفيذي متخصص في إدارة العمليات متعددة المواقع، وتصميم أنظمة CMMS، وإنشاءات قطاع الأغذية والمشروبات.</p>
         </div>
         
-        <!-- Slide 2: Builder -->
+        <!-- Slide 2: B.Laban -->
         <div class="slide" id="slide-1">
-            <h2 class="slide-title">مشاريع الإنشاءات</h2>
+            <h2 class="slide-title" style="color: var(--accent);">مدير عام الإدارة الهندسية</h2>
+            <h3 style="text-align: center; color: #fff; margin-top: -1rem; margin-bottom: 2rem; font-size: 1.5rem;">شركة بـ لبن (2023 - حتى الآن)</h3>
+            <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="stat-card highlight">
+                    <span class="stat-number" style="font-size: 3rem;">33%</span>
+                    <span class="stat-label">تخفيض الميزانية التشغيلية</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">عبر تطبيق نظام صيانة مخصص CMMS لـ 200 موقع.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" style="font-size: 3rem;">3</span>
+                    <span class="stat-label">مصانع إنتاج كبرى</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">بناء مصنعي الكوكيز والشيكولاتة من الصفر وتحديث مصنع الألبان.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: El Abd -->
+        <div class="slide" id="slide-2">
+            <h2 class="slide-title" style="color: var(--accent);">مدير الإدارة الكهربائية</h2>
+            <h3 style="text-align: center; color: #fff; margin-top: -1rem; margin-bottom: 2rem; font-size: 1.5rem;">شركة العبد للأغذية (2015 - 2023)</h3>
             <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
                 <div class="stat-card">
-                    <span class="stat-number" style="font-size: 4rem;">50+</span>
-                    <span class="stat-label" style="font-size: 1.3rem;">فرعاً تجارياً تم تسليمه</span>
+                    <i class="fa-solid fa-microchip" style="font-size: 2rem; margin-bottom: 1rem; color: #fff;"></i>
+                    <span class="stat-label">رائد في الأتمتة الصناعية</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">تصميم وتشغيل أنظمة PLC/SCADA لخطوط الحلويات ونقلها من التشغيل اليدوي للآلي.</p>
                 </div>
                 <div class="stat-card highlight">
-                    <span class="stat-number" style="font-size: 4rem;">2</span>
-                    <span class="stat-label" style="font-size: 1.3rem;">مصنع جديد (Greenfield) من الصفر</span>
+                    <i class="fa-solid fa-building" style="font-size: 2rem; margin-bottom: 1rem; color: var(--accent);"></i>
+                    <span class="stat-label">ممثل المالك للمشاريع</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">المسؤول التقني المباشر لبناء الفروع الجديدة، التفاوض، والإشراف التنفيذي.</p>
                 </div>
             </div>
-            <p class="slide-desc" style="margin-top: 1rem;">الممثل المباشر للمالك في التوسعات الكبرى. الإشراف الكامل على جميع أعمال التصميم الهندسي والتركيبات وحتى بدء الإنتاج والتشغيل الفعلي.</p>
         </div>
         
-        <!-- Slide 3: Automation -->
-        <div class="slide" id="slide-2">
-            <h2 class="slide-title">الأتمتة الصناعية</h2>
-            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
-                <div class="stat-card">
-                    <i class="fa-solid fa-microchip" style="font-size: 2.5rem; color: #fff; margin-bottom: 1rem;"></i>
-                    <span class="stat-label" style="color: #fff; font-size: 1.2rem;">أنظمة التحكم PLC و SCADA</span>
-                </div>
-                <div class="stat-card highlight">
-                    <i class="fa-solid fa-industry" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"></i>
-                    <span class="stat-label" style="color: #fff; font-size: 1.2rem;">تطبيق معايير الثورة الصناعية 4.0</span>
-                </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-bolt" style="font-size: 2.5rem; color: #fff; margin-bottom: 1rem;"></i>
-                    <span class="stat-label" style="color: #fff; font-size: 1.2rem;">توزيع الطاقة و لوحات MCC</span>
-                </div>
-            </div>
-            <p class="slide-desc" style="margin-top: 1rem;">تصميم وتشغيل أنظمة التحكم المعقدة لخطوط تصنيع الحلويات بالكامل من البداية لتحديث الإنتاج للعمل آلياً.</p>
-        </div>
-        
-        <!-- Slide 4: Credentials -->
+        <!-- Slide 4: Early Career -->
         <div class="slide" id="slide-3">
+            <h2 class="slide-title">بدايات المسيرة المهنية</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" style="font-size: 2rem;">عصائر فراجيلو</span>
+                    <span class="stat-label">مهندس صيانة كهربائية (2014-2015)</span>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">إدارة التركيبات الكهربائية في بيئة إنتاج ضخمة.</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" style="font-size: 2rem;">فالكون للطاقة</span>
+                    <span class="stat-label">مهندس مكتب فني (2013-2014)</span>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">تصميم ومراجعة المخططات الهندسية وتقدير التكاليف.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Credentials -->
+        <div class="slide" id="slide-4">
             <h2 class="slide-title">التعليم والشهادات</h2>
             <div class="stats-grid">
                 <div class="stat-card">
@@ -479,14 +506,14 @@
                     <span class="stat-label">شهادة مهنية معتمدة</span>
                 </div>
                 <div class="stat-card">
+                    <i class="fa-brands fa-google" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <span class="stat-number" style="font-size: 2rem;">PMP</span>
+                    <span class="stat-label">إدارة المشاريع من جوجل (أجايل)</span>
+                </div>
+                <div class="stat-card">
                     <i class="fa-solid fa-medal" style="font-size: 2rem; margin-bottom: 1rem;"></i>
                     <span class="stat-number" style="font-size: 2rem;">الحزام الأخضر</span>
                     <span class="stat-label">Lean Six Sigma</span>
-                </div>
-                <div class="stat-card">
-                    <i class="fa-brands fa-google" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <span class="stat-number" style="font-size: 2rem;">PMP</span>
-                    <span class="stat-label">إدارة المشاريع من جوجل</span>
                 </div>
             </div>
         </div>

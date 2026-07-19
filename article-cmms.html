@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Your CMMS Implementation Fails - Yahya Tarek Farag</title>
+
+<meta name="description" content="A deep dive into the common pitfalls of deploying a Computerized Maintenance Management System and how user adoption is the real key to ROI.">
+<link rel="canonical" href="https://yahyafarag.github.io/yahya-web-site/article-cmms.html">
+<link rel="alternate" hreflang="en" href="https://yahyafarag.github.io/yahya-web-site/article-cmms.html">
+<link rel="alternate" hreflang="ar" href="https://yahyafarag.github.io/yahya-web-site/article-cmms-ar.html">
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.article-header { margin-bottom: 2rem; }
+.article-category { color: #ec4899; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 1rem; display: inline-block; }
+.article-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; background: linear-gradient(to right, #fff, #cbd5e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.article-meta { display: flex; gap: 1.5rem; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; align-items: center; }
+.article-meta i { color: var(--accent); margin-right: 0.5rem; }
+.article-cover { width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 3rem; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.article-content { font-size: 1.1rem; line-height: 1.8; color: #e2e8f0; }
+.article-content h2 { font-size: 1.8rem; color: #fff; margin: 2.5rem 0 1rem 0; font-weight: 700; }
+.article-content p { margin-bottom: 1.5rem; }
+.article-content ul { margin-left: 2rem; margin-bottom: 1.5rem; }
+.article-content li { margin-bottom: 0.5rem; }
+.article-content blockquote { border-left: 4px solid #ec4899; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--text-muted); background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 0 10px 10px 0; }
+.share-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem; }
+.share-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease; border: 1px solid var(--glass-border); }
+.share-btn:hover { background: var(--accent); transform: translateY(-3px); box-shadow: 0 5px 15px var(--accent-glow); }
+</style>
+</head>
+<body>
+<div id="particles-js"></div>
+<div class="dashboard-container">
+<!-- Sidebar -->
+<aside class="profile-sidebar">
+    <div class="profile-photo">
+        <a href="index.html"><img src="assets/images/profile/yahya.webp" alt="Yahya Tarek Farag"></a>
+    </div>
+    <h1>Yahya Tarek Farag</h1>
+    <h2>General Manager of Engineering</h2>
+
+    <div class="sidebar-actions">
+        <a href="mailto:Y_Tarek91@yahoo.com" class="btn primary" style="background: linear-gradient(135deg, var(--accent), #0284c7); margin-bottom: 15px; font-weight: bold; border-color: var(--accent);">
+            <i class="fa-solid fa-envelope"></i> Contact Me
+        </a>
+        <a href="blog.html" class="btn secondary" style="margin-top: 0.5rem; background: rgba(236, 72, 153, 0.1); border-color: #ec4899; color: #ec4899;">
+            <i class="fa-solid fa-arrow-left"></i> Back to Blog
+        </a>
+        <a href="article-cmms-ar.html" class="btn secondary" style="margin-top: 1rem; border-color: transparent;">
+            <i class="fa-solid fa-globe"></i> العربية
+        </a>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="infographic-stage" style="overflow-y: auto;">
+    <article style="max-width: 800px; margin: 0 auto; width: 100%;">
+        <header class="article-header">
+            <span class="article-category">Maintenance</span>
+            <h1 class="article-title">Why Your CMMS Implementation Fails (And How to Fix It)</h1>
+            
+            <div class="article-meta">
+                <span><i class="fa-solid fa-calendar"></i> June 12, 2026</span>
+                <span><i class="fa-solid fa-clock"></i> 7 min read</span>
+                <span><i class="fa-solid fa-user"></i> Yahya Tarek Farag</span>
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="CMMS Implementation" class="article-cover">
+
+        <div class="article-content">
+            <p>Companies spend millions of dollars annually on Computerized Maintenance Management Systems (CMMS) such as SAP PM, IBM Maximo, or Fiix. Yet, industry statistics show that nearly 50% to 80% of CMMS implementations fail to deliver the expected Return on Investment (ROI). Why does a system designed to streamline operations end up becoming a burden?</p>
+
+            <h2>1. It is Treated as an IT Project, Not a Change Management Project</h2>
+            <p>The most fatal flaw in CMMS deployment is assuming that installing the software is the finish line. A CMMS alters the daily habits of technicians, supervisors, and planners. If you deploy the software without managing the human element—without explaining <em>why</em> this new workflow benefits them—they will resist it.</p>
+            <blockquote>
+                "A system is only as good as the data entered into it. If technicians find the software cumbersome, they will enter garbage data, and management will receive garbage reports."
+            </blockquote>
+
+            <h2>2. Poor Asset Hierarchy and Data Garbage</h2>
+            <p>Many organizations attempt to rush the implementation by dumping flat lists of assets into the system without establishing a logical Parent-Child asset hierarchy. If a technician cannot easily locate the "Pump Motor" under "Line 1 -> Mixing Tank", they will simply assign the work order to the highest level, making future root cause analysis impossible.</p>
+            <p><strong>The Fix:</strong> Take the time to build a structured, standardized asset hierarchy (ISO 14224 is a great standard to follow). Cleanse your data before migration.</p>
+
+            <h2>3. Over-Complicating Work Orders</h2>
+            <p>Engineers and managers love data, so they often configure the CMMS to require 20 mandatory fields before a technician can close a work order. What happens in reality? The technician spends more time clicking through screens than turning wrenches, leading to frustration and pencil-whipping.</p>
+            <p><strong>The Fix:</strong> Keep it incredibly simple. Ask for the bare minimum to start: What broke? What did you do to fix it? How long did it take? What parts did you use? Expand complexity only after the base habit is formed.</p>
+
+            <h2>4. Lack of Mobile Accessibility</h2>
+            <p>If a technician has to walk 15 minutes back to a shared computer terminal to close a work order, your CMMS will fail. In the modern era, maintenance happens on the floor, and data entry must happen there too. Mobile applications (via tablets or smartphones) are no longer a luxury; they are a necessity for high data accuracy.</p>
+
+            <h2>Conclusion</h2>
+            <p>To successfully implement a CMMS, focus on the people first. Train them, listen to their feedback, simplify their interfaces, and ensure the foundational data is perfectly structured. When the technicians see that the CMMS actually makes their job easier by managing spare parts effectively and providing historical data, adoption will naturally follow.</p>
+        </div>
+
+        <div class="share-section">
+            <span style="font-weight: 600;">Share this article:</span>
+            <a href="https://www.linkedin.com/in/yahyatarekfarag/" class="share-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="share-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="share-btn"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </article>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    window.onload = function() {
+        particlesJS('particles-js', {
+            "particles": { "number": { "value": 30 }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2 }, "size": { "value": 2, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#00f2fe", "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1 } }
+        });
+    };
+</script>
+</body>
+</html>

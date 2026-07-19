@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لماذا تفشل تطبيقات الـ CMMS - يحيى طارق فرج</title>
+
+<meta name="description" content="نظرة عميقة في الأخطاء الشائعة عند تطبيق نظام إدارة الصيانة وكيف أن تبني المستخدمين هو المفتاح.">
+<link rel="canonical" href="https://yahyafarag.github.io/yahya-web-site/article-cmms-ar.html">
+<link rel="alternate" hreflang="en" href="https://yahyafarag.github.io/yahya-web-site/article-cmms.html">
+<link rel="alternate" hreflang="ar" href="https://yahyafarag.github.io/yahya-web-site/article-cmms-ar.html">
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+.article-header { margin-bottom: 2rem; }
+.article-category { color: #ec4899; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 1rem; display: inline-block; }
+.article-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; background: linear-gradient(to right, #fff, #cbd5e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.article-meta { display: flex; gap: 1.5rem; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; align-items: center; }
+.article-meta i { color: var(--accent); margin-left: 0.5rem; }
+.article-cover { width: 100%; max-height: 400px; object-fit: cover; border-radius: 15px; margin-bottom: 3rem; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.article-content { font-size: 1.1rem; line-height: 1.8; color: #e2e8f0; }
+.article-content h2 { font-size: 1.8rem; color: #fff; margin: 2.5rem 0 1rem 0; font-weight: 700; }
+.article-content p { margin-bottom: 1.5rem; }
+.article-content ul { margin-right: 2rem; margin-bottom: 1.5rem; }
+.article-content li { margin-bottom: 0.5rem; }
+.article-content blockquote { border-right: 4px solid #ec4899; padding-right: 1.5rem; margin: 2rem 0; font-style: italic; color: var(--text-muted); background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 10px 0 0 10px; }
+.share-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem; }
+.share-btn { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s ease; border: 1px solid var(--glass-border); }
+.share-btn:hover { background: var(--accent); transform: translateY(-3px); box-shadow: 0 5px 15px var(--accent-glow); }
+</style>
+</head>
+<body>
+<div id="particles-js"></div>
+<div class="dashboard-container">
+<!-- Sidebar -->
+<aside class="profile-sidebar">
+    <div class="profile-photo">
+        <a href="index-ar.html"><img src="assets/images/profile/yahya.webp" alt="يحيى طارق فرج"></a>
+    </div>
+    <h1>يحيى طارق فرج</h1>
+    <h2>مدير عام الإدارة الهندسية</h2>
+
+    <div class="sidebar-actions">
+        <a href="mailto:Y_Tarek91@yahoo.com" class="btn primary" style="background: linear-gradient(135deg, var(--accent), #0284c7); margin-bottom: 15px; font-weight: bold; border-color: var(--accent);">
+            <i class="fa-solid fa-envelope"></i> تواصل معي
+        </a>
+        <a href="blog-ar.html" class="btn secondary" style="margin-top: 0.5rem; background: rgba(236, 72, 153, 0.1); border-color: #ec4899; color: #ec4899;">
+            العودة للمدونة <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="article-cmms.html" class="btn secondary" style="margin-top: 1rem; border-color: transparent;">
+            <i class="fa-solid fa-globe"></i> English
+        </a>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="infographic-stage" style="overflow-y: auto;">
+    <article style="max-width: 800px; margin: 0 auto; width: 100%;">
+        <header class="article-header">
+            <span class="article-category">الصيانة</span>
+            <h1 class="article-title">لماذا تفشل تطبيقات الـ CMMS (وكيفية إصلاحها)</h1>
+            
+            <div class="article-meta">
+                <span><i class="fa-solid fa-calendar"></i> 12 يونيو 2026</span>
+                <span><i class="fa-solid fa-clock"></i> 7 دقائق للقراءة</span>
+                <span><i class="fa-solid fa-user"></i> يحيى طارق فرج</span>
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" alt="CMMS Implementation" class="article-cover">
+
+        <div class="article-content">
+            <p>تنفق الشركات ملايين الدولارات سنوياً على أنظمة إدارة الصيانة المحوسبة (CMMS) مثل SAP PM، IBM Maximo، أو Fiix. ومع ذلك، تُظهر إحصاءات الصناعة أن ما يقرب من 50٪ إلى 80٪ من عمليات تنفيذ الـ CMMS تفشل في تحقيق العائد المتوقع على الاستثمار (ROI). لماذا ينتهي المطاف بنظام مصمم لتبسيط العمليات إلى أن يصبح عبئاً؟</p>
+
+            <h2>1. يتم التعامل معه كمشروع IT، وليس كمشروع إدارة التغيير</h2>
+            <p>العيب الأكثر فتكاً في نشر نظام CMMS هو افتراض أن تثبيت البرنامج هو خط النهاية. يغير نظام الـ CMMS العادات اليومية للفنيين والمشرفين والمخططين. إذا قمت بنشر البرنامج دون إدارة العنصر البشري - ودون شرح <em>السبب</em> وراء فائدة سير العمل الجديد لهم - فسوف يقاومونه بكل تأكيد.</p>
+            <blockquote>
+                "أي نظام هو بجودة البيانات المدخلة إليه فقط. إذا وجد الفنيون البرنامج معقداً، فسوف يدخلون بيانات عديمة الفائدة، وسوف تتلقى الإدارة تقارير غير دقيقة (Garbage In, Garbage Out)."
+            </blockquote>
+
+            <h2>2. ضعف هيكلية الأصول والبيانات العشوائية</h2>
+            <p>تحاول العديد من المؤسسات التسرع في التنفيذ من خلال تفريغ قوائم مسطحة من الأصول في النظام دون إنشاء تسلسل هرمي منطقي للأصول (Parent-Child). إذا لم يتمكن الفني من تحديد موقع "محرك المضخة" بسهولة تحت "الخط 1 -> خزان الخلط"، فسوف يقوم ببساطة بتعيين أمر العمل إلى أعلى مستوى في الهرم، مما يجعل تحليل السبب الجذري مستحيلاً في المستقبل.</p>
+            <p><strong>الحل:</strong> خذ الوقت الكافي لبناء تسلسل هرمي مهيكل وموحد للأصول (يعتبر ISO 14224 معياراً رائعاً يمكن اتباعه). قم بتنقية وتنظيف بياناتك قبل الترحيل إلى النظام الجديد.</p>
+
+            <h2>3. المبالغة في تعقيد أوامر العمل (Work Orders)</h2>
+            <p>يحب المهندسون والمديرون جمع البيانات، ولذلك غالباً ما يقومون بتكوين نظام الـ CMMS ليتطلب 20 حقلاً إلزامياً قبل أن يتمكن الفني من إغلاق أمر العمل. ماذا يحدث في الواقع؟ يقضي الفني وقتاً في النقر عبر الشاشات أكثر من الوقت الذي يقضيه في ربط المسامير، مما يؤدي إلى الإحباط وإدخال أي كلام لإغلاق الأمر.</p>
+            <p><strong>الحل:</strong> أبقِ الأمر بسيطاً للغاية. اطلب الحد الأدنى فقط للبدء: ماذا تعطل؟ ماذا فعلت لإصلاحه؟ كم من الوقت استغرق ذلك؟ ما هي قطع الغيار التي استخدمتها؟ لا تقم بتوسيع التعقيد إلا بعد تكوين العادة الأساسية.</p>
+
+            <h2>4. عدم توفر إمكانية الوصول عبر الأجهزة المحمولة</h2>
+            <p>إذا كان على الفني المشي لمدة 15 دقيقة للعودة إلى جهاز كمبيوتر مشترك لإغلاق أمر العمل، فسيفشل نظام الـ CMMS الخاص بك. في العصر الحديث، تتم الصيانة في أرض المصنع، ويجب أن يتم إدخال البيانات هناك أيضاً. تطبيقات الهاتف المحمول (عبر الأجهزة اللوحية أو الهواتف الذكية) لم تعد رفاهية؛ إنها ضرورة حتمية للحصول على دقة بيانات عالية.</p>
+
+            <h2>الخلاصة</h2>
+            <p>لتنفيذ نظام CMMS بنجاح، ركز على الأشخاص أولاً. قم بتدريبهم، واستمع إلى ملاحظاتهم، وبسّط واجهات الاستخدام الخاصة بهم، وتأكد من أن البيانات الأساسية مبنية بشكل مثالي. عندما يرى الفنيون أن نظام CMMS يجعل وظيفتهم أسهل بالفعل من خلال إدارة قطع الغيار بفعالية وتوفير البيانات التاريخية الدقيقة، فإن تبني النظام سيأتي بشكل طبيعي.</p>
+        </div>
+
+        <div class="share-section">
+            <span style="font-weight: 600;">شارك هذا المقال:</span>
+            <a href="https://www.linkedin.com/in/yahyatarekfarag/" class="share-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="share-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="share-btn"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </article>
+</main>
+</div>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    window.onload = function() {
+        particlesJS('particles-js', {
+            "particles": { "number": { "value": 30 }, "color": { "value": "#ffffff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2 }, "size": { "value": 2, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#00f2fe", "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1 } }
+        });
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المدونة - يحيى طارق فرج</title>
+
+<meta name="description" content="اكتشف مقالات وأفكار يحيى طارق فرج حول الإدارة الهندسية، سيجما 6، الأتمتة الصناعية، والقيادة.">
+<link rel="canonical" href="https://yahyafarag.github.io/yahya-web-site/blog-ar.html">
+<link rel="alternate" hreflang="en" href="https://yahyafarag.github.io/yahya-web-site/blog.html">
+<link rel="alternate" hreflang="ar" href="https://yahyafarag.github.io/yahya-web-site/blog-ar.html">
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+/* Specific Blog Styles */
+.blog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-color: #ec4899;
+}
+
+.blog-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.blog-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.blog-category {
+    color: #ec4899;
+    font-weight: 600;
+}
+
+.blog-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.blog-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.read-more-btn {
+    margin-top: 1.5rem;
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid #ec4899;
+    color: #ec4899;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: #ec4899;
+    color: white;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: #ec4899;
+    border-color: #ec4899;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+}
+</style>
+</head>
+<body>
+    <noscript>
+        <div style="background: #ef4444; color: white; padding: 1rem; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;">
+            لكي يعمل هذا الموقع بشكل كامل، يجب تفعيل الجافاسكربت (JavaScript) في متصفحك.
+        </div>
+    </noscript>
+<div id="particles-js"></div>
+<div class="dashboard-container">
+<!-- Sidebar -->
+<aside class="profile-sidebar">
+    <div class="profile-photo">
+        <a href="index-ar.html">
+            <img src="assets/images/profile/yahya.webp" alt="يحيى طارق فرج">
+        </a>
+    </div>
+    <h1>يحيى طارق فرج</h1>
+    <h2>مدير عام الإدارة الهندسية</h2>
+
+    <div class="sidebar-actions">
+        <a href="mailto:Y_Tarek91@yahoo.com" class="btn primary" style="background: linear-gradient(135deg, var(--accent), #0284c7); margin-bottom: 15px; font-weight: bold; border-color: var(--accent);">
+            <i class="fa-solid fa-envelope"></i> تواصل معي
+        </a>
+        <a href="cv-viewer-ar.html" class="btn primary" style="background: linear-gradient(135deg, #10b981, #059669);">
+            عرض السيرة الذاتية 👁️
+        </a>
+        <a href="https://raw.githubusercontent.com/yahyafarag/yahya-web-site/main/resume/Yahya_Tarek_Farag_CV_Arabic.pdf" target="_blank" rel="noopener noreferrer" class="btn primary">
+            <i class="fa-solid fa-download"></i> تحميل السيرة الذاتية
+        </a>
+        <a href="certificates-ar.html" class="btn secondary">
+            <i class="fa-solid fa-award"></i> سجل الشهادات
+        </a>
+        <a href="projects-ar.html" class="btn secondary" style="margin-top: 0.5rem; background: rgba(0, 242, 254, 0.1); border-color: var(--accent); color: var(--accent);">
+            سجل المشاريع 🚀
+        </a>
+        <a href="blog-ar.html" class="btn secondary" style="margin-top: 0.5rem; background: rgba(236, 72, 153, 0.1); border-color: #ec4899; color: #ec4899;">
+            المدونة ✍️
+        </a>
+        <a href="blog.html" class="btn secondary" style="margin-top: 1rem; border-color: transparent;">
+            <i class="fa-solid fa-globe"></i> English
+        </a>
+    </div>
+
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-direction: row-reverse;">
+        <a href="https://www.linkedin.com/in/yahyatarekfarag/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" style="color: var(--text-muted); font-size: clamp(1.2rem, 2vw, 1.5rem); transition: color 0.3s;"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:Y_Tarek91@yahoo.com" aria-label="Send Email" style="color: var(--text-muted); font-size: clamp(1.2rem, 2vw, 1.5rem); transition: color 0.3s;"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://wa.me/201080801708" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp" style="color: var(--text-muted); font-size: clamp(1.2rem, 2vw, 1.5rem); transition: color 0.3s;"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<main class="infographic-stage" style="overflow-y: auto;">
+    <div class="blog-header">
+        <h2 class="slide-title" style="background: linear-gradient(to right, #fff, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">المدونة والمقالات</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">رؤى، وتجارب، ومقالات تقنية في الإدارة الهندسية، استراتيجيات الصيانة، والتحسين المستمر.</p>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">جميع المقالات</button>
+        <button class="filter-btn" data-filter="leadership">القيادة</button>
+        <button class="filter-btn" data-filter="maintenance">الصيانة</button>
+        <button class="filter-btn" data-filter="automation">الأتمتة والتقنية</button>
+    </div>
+
+    <div class="blog-grid" id="blogGrid">
+        <!-- Article 1 -->
+        <article class="blog-card" data-category="leadership">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800" alt="Leadership in Engineering" class="blog-img">
+            <div class="blog-content">
+                <div class="blog-meta">
+                    <span class="blog-category">القيادة</span>
+                    <span>19 يوليو 2026</span>
+                </div>
+                <h3 class="blog-title">بناء فرق هندسية عالية الأداء في المشاريع التأسيسية</h3>
+                <p class="blog-excerpt">أهم التحديات والاستراتيجيات عند تجميع فريق هندسي جديد من الصفر لمنشأة جديدة كلياً، مع التركيز على ثقافة العمل والجاهزية التشغيلية.</p>
+                <a href="article-sample-ar.html" class="read-more-btn"><i class="fa-solid fa-arrow-left"></i> اقرأ المقال</a>
+            </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card" data-category="maintenance">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="CMMS Implementation" class="blog-img">
+            <div class="blog-content">
+                <div class="blog-meta">
+                    <span class="blog-category">الصيانة</span>
+                    <span>12 يونيو 2026</span>
+                </div>
+                <h3 class="blog-title">لماذا تفشل تطبيقات الـ CMMS (وكيفية إصلاحها)</h3>
+                <p class="blog-excerpt">نظرة عميقة في الأخطاء الشائعة عند تطبيق نظام إدارة الصيانة المحوسب وكيف أن تفاعل المستخدمين هو المفتاح الحقيقي لعائد الاستثمار.</p>
+                <a href="article-sample-ar.html" class="read-more-btn"><i class="fa-solid fa-arrow-left"></i> اقرأ المقال</a>
+            </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card" data-category="automation">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Industrial Automation" class="blog-img">
+            <div class="blog-content">
+                <div class="blog-meta">
+                    <span class="blog-category">الأتمتة والتقنية</span>
+                    <span>05 مايو 2026</span>
+                </div>
+                <h3 class="blog-title">سد الفجوة بين تكنولوجيا المعلومات (IT) والتقنيات التشغيلية (OT)</h3>
+                <p class="blog-excerpt">استكشاف التقاطع الحرج بين تكنولوجيا المعلومات والتقنيات التشغيلية في الصناعة 4.0، وكيفية تأمين أنظمة التحكم الصناعية.</p>
+                <a href="article-sample-ar.html" class="read-more-btn"><i class="fa-solid fa-arrow-left"></i> اقرأ المقال</a>
+            </div>
+        </article>
+    </div>
+</main>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    window.onload = function() {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": false },
+                "size": { "value": 2, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#00f2fe", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } }, "push": { "particles_nb": 3 } }
+            },
+            "retina_detect": true
+        });
+
+        // Filtering logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter logic
+                const filterValue = btn.getAttribute('data-filter');
+                blogCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    };
+</script>
+</body>
+</html>

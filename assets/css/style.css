@@ -552,7 +552,7 @@
         .stat-label { font-size: 1.1rem; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
 
         .skills-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;
         }
         .skill-card {
             background: var(--bg-card); border: 1px solid var(--card-border);
@@ -603,7 +603,7 @@
 
         /* Certificate Timeline Styles */
         .timeline {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;
         }
         .card {
             background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 20px;

@@ -1,380 +1,179 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog Vault - Yahya Tarek Farag</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Vault - Yahya Tarek Farag</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        body { overflow-x: hidden; overflow-y: auto; background: #0a192f; }
+        .page-header { text-align: center; padding: 4rem 2rem; background: var(--bg-gradient); border-bottom: 1px solid var(--glass-border); margin-top: 80px; }
+        .page-title { font-size: 3rem; color: #fff; font-weight: 800; margin-bottom: 1rem; }
+        .page-subtitle { color: var(--accent); font-size: 1.2rem; font-weight: 600; }
+        .content-wrapper { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; }
+        
+        /* Navbar styling */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: rgba(15, 36, 64, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border); }
+        .nav-brand { font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration:none; display:flex; align-items:center; gap:0.5rem;}
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        .lang-switch { border: 1px solid var(--accent); padding: 0.5rem 1rem; border-radius: 20px; color: var(--accent) !important; }
+        .footer { text-align: center; padding: 3rem 5%; border-top: 1px solid var(--glass-border); background: var(--bg-gradient); }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+        .social-links a { color: var(--text-muted); font-size: 1.8rem; transition: color 0.3s; }
+        
+        .project-vault-card, .blog-card, .cert-card { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 12px; transition: transform 0.3s, border-color 0.3s; padding: 2rem; display: flex; flex-direction: column; }
+        .project-vault-card:hover, .blog-card:hover, .cert-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
 
-<meta name="description" content="Explore articles and insights by Yahya Tarek Farag on Engineering Management, Lean Six Sigma, Automation, and Leadership.">
-<link rel="canonical" href="https://yahyafarag.github.io/yahya-web-site/blog.html">
-<link rel="alternate" hreflang="en" href="https://yahyafarag.github.io/yahya-web-site/blog.html">
-<link rel="alternate" hreflang="ar" href="https://yahyafarag.github.io/yahya-web-site/blog-ar.html">
-
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/style.css">
-<style>
-/* Specific Blog Styles */
-.blog-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.blog-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border-color: var(--accent); /* Pink accent for blog */
-}
-
-.blog-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.blog-content {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-}
-
-.blog-category {
-    color: var(--accent);
-    font-weight: 600;
-}
-
-.blog-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.4;
-}
-
-.blog-excerpt {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    flex: 1;
-}
-
-.read-more-btn {
-    margin-top: 1.5rem;
-    align-self: flex-start;
-    padding: 0.5rem 1rem;
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.read-more-btn:hover {
-    background: var(--accent);
-    color: white;
-}
-
-.filters {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-}
-
-.filter-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    color: var(--text-main);
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    backdrop-filter: blur(5px);
-}
-
-.filter-btn:hover, .filter-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-    box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
-}
-</style>
 </head>
-<body>
-    <noscript>
-        <div style="background: #ef4444; color: white; padding: 1rem; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;">
-            For full functionality of this site it is necessary to enable JavaScript. Here are the <a href="https://www.enable-javascript.com/" style="color: white; text-decoration: underline;" target="_blank">instructions how to enable JavaScript in your web browser</a>.
+<body style="">
+    
+    <nav class="navbar" style="background: rgba(15, 36, 64, 1); position: sticky;">
+        <div class="nav-brand">
+            <i class="fa-solid fa-gear" style="color: var(--accent);"></i> INJAZ
         </div>
-    </noscript>
-<div id="particles-js"></div>
-<div class="dashboard-container">
-<!-- Sidebar -->
-<aside class="profile-sidebar">
-    <div class="profile-photo">
-        <a href="index.html">
-            <img loading="lazy" src="assets/images/profile/yahya-logo.jpeg" alt="Yahya Tarek Farag">
-        </a>
-    </div>
-    <h1>Yahya Tarek Farag</h1>
-    <h2>General Manager of Engineering</h2>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Success Portfolio</a>
+            <a href="blog.html">Knowledge Hub</a>
+            <a href="certificates.html">Certificates</a>
+            <a href="index-ar.html" class="lang-switch"><i class="fa-solid fa-globe"></i> العربية</a>
+        </div>
+    </nav>
 
-    <div class="sidebar-actions">
-        <a href="https://wa.me/201080801708" class="btn primary" style="background: linear-gradient(135deg, var(--accent), #0284c7); margin-bottom: 15px; font-weight: bold; border-color: var(--accent);">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-        <a href="cv-viewer.html" class="btn primary" style="background: linear-gradient(135deg, #10b981, #059669);">
-            View CV 👁️
-        </a>
-        <a href="resume/Yahya_Tarek_Farag_Executive_Resume.pdf" download="Yahya_Tarek_Farag_Executive_Resume.pdf" class="btn primary">
-            <i class="fa-solid fa-download"></i> Download CV
-        </a>
-        <a href="certificates.html" class="btn secondary">
-            <i class="fa-solid fa-award"></i> Certificates Vault
-        </a>
-        <a href="projects.html" class="btn secondary" style="margin-top: 0.5rem; background: rgba(242, 140, 40, 0.1); border-color: var(--accent); color: var(--accent);">
-            Projects Vault 🚀
-        </a>
-        <a href="blog.html" class="btn secondary" style="margin-top: 0.5rem; background: rgba(242, 140, 40, 0.1); border-color: var(--accent); color: var(--accent);">
-            Blog Vault ✍️
-        </a>
-        <a href="blog-ar.html" class="btn secondary" style="margin-top: 1rem; border-color: transparent;">
-            <i class="fa-solid fa-globe"></i> العربية
-        </a>
-    </div>
-
-    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-        <a href="https://www.linkedin.com/in/yahyatarekfarag/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" style="color: var(--text-muted); font-size: clamp(1.2rem, 2vw, 1.5rem); transition: color 0.3s;"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="mailto:Y_Tarek91@yahoo.com" aria-label="Send Email" style="color: var(--text-muted); font-size: clamp(1.2rem, 2vw, 1.5rem); transition: color 0.3s;"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://wa.me/201080801708" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp" style="color: var(--text-muted); font-size: clamp(1.2rem, 2vw, 1.5rem); transition: color 0.3s;"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
-</aside>
-
-<!-- Main Content -->
-<main class="infographic-stage" style="overflow-y: auto;">
-    <div class="blog-header">
-        <h2 class="slide-title" style="background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Blog Vault</h2>
-        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Insights, experiences, and technical articles on Engineering Management, Maintenance Strategies, and Continuous Improvement.</p>
-    </div>
-
-    <div class="filters">
-        <button class="filter-btn active" data-filter="all">All Articles</button>
-        <button class="filter-btn" data-filter="leadership">Leadership</button>
-        <button class="filter-btn" data-filter="maintenance">Maintenance</button>
-        <button class="filter-btn" data-filter="automation">Automation & Tech</button>
-    </div>
-
-    <div class="blog-grid" id="blogGrid">
-
-        <!-- Article: Case Study Fast Food -->
-        <article class="blog-card" data-category="maintenance">
-            <img loading="lazy" src="assets/images/projects/mega_expansion.webp" alt="Fast Food Maintenance Case Study" class="blog-img" onerror="this.src='assets/images/blog/cmms.jpg'">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Case Study</span>
-                    <span>March 10, 2026</span>
-                </div>
-                <h3 class="blog-title">Saving 5M EGP in Maintenance for a Fast Food Chain</h3>
-                <p class="blog-excerpt">How standardizing asset registries and consolidating suppliers saved millions in 15 branches.</p>
-                <a href="case-study-fastfood.html" class="read-more-btn">Read Case Study <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
-            </div>
-        </article>
-
-        <!-- Article: Case Study Beverage -->
-        <article class="blog-card" data-category="automation">
-            <img loading="lazy" src="assets/images/blog/it-ot.jpg" alt="Energy Audit Case Study" class="blog-img">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Case Study</span>
-                    <span>February 15, 2026</span>
-                </div>
-                <h3 class="blog-title">Reducing Electricity Bills by 22% for a Beverage Factory</h3>
-                <p class="blog-excerpt">An energy audit that repaired leaks, corrected power factor, and replaced inefficient motors.</p>
-                <a href="case-study-beverage.html" class="read-more-btn">Read Case Study <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
-            </div>
-        </article>
-
-        <!-- Article: OEE -->
-        <article class="blog-card" data-category="maintenance">
-            <img loading="lazy" src="assets/images/blog/greenfield.jpg" alt="OEE Metric" class="blog-img">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Maintenance</span>
-                    <span>January 20, 2026</span>
-                </div>
-                <h3 class="blog-title">OEE: The Ultimate Metric for Production Efficiency</h3>
-                <p class="blog-excerpt">Learn how Overall Equipment Effectiveness reveals hidden capacity in your manufacturing plant.</p>
-                <a href="article-oee.html" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
-            </div>
-        </article>
-
-        <!-- Article: TCO -->
-        <article class="blog-card" data-category="leadership">
-            <img loading="lazy" src="assets/images/blog/cmms.jpg" alt="TCO Equation" class="blog-img">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Leadership</span>
-                    <span>December 05, 2025</span>
-                </div>
-                <h3 class="blog-title">Repair or Replace? The TCO Equation That Decides</h3>
-                <p class="blog-excerpt">Stop guessing and use the Total Cost of Ownership model to make asset replacement decisions.</p>
-                <a href="article-tco.html" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
-            </div>
-        </article>
-
-
-        <!-- Article: Case Study -->
-        <article class="blog-card" data-category="case-study">
-            <img loading="lazy" src="assets/images/blog/cmms.jpg" alt="Cost Reduction Case Study" class="blog-img">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Case Study</span>
-                    <span>August 01, 2026</span>
-                </div>
-                <h3 class="blog-title">Achieving EGP 60M Annual Savings Through Engineering Optimization</h3>
-                <p class="blog-excerpt">How we successfully reduced annual engineering operating costs by 33% across 3 manufacturing plants.</p>
-                <a href="case-study-cost.html" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </article>
-
-        <!-- Article: 7 Lessons -->
-        <article class="blog-card" data-category="leadership">
-            <img loading="lazy" src="assets/images/blog/greenfield.jpg" alt="Manufacturing Lessons" class="blog-img">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Leadership</span>
-                    <span>July 20, 2026</span>
-                </div>
-                <h3 class="blog-title">7 Lessons I Learned After 13 Years in Manufacturing Operations</h3>
-                <p class="blog-excerpt">Operational performance is rarely the result of one department working harder. It is the result of functions working together.</p>
-                <a href="article-lessons.html" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </article>
-
-        <!-- Article 1 -->
-        <article class="blog-card" data-category="leadership">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800" alt="Leadership in Engineering" class="blog-img">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Leadership</span>
-                    <span>July 19, 2026</span>
-                </div>
-                <h3 class="blog-title">Building High-Performance Engineering Teams in Greenfield Projects</h3>
-                <p class="blog-excerpt">The key challenges and strategies when assembling a new engineering team from scratch for a greenfield facility, focusing on culture and operational readiness.</p>
-                <a href="article-greenfield.html" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </article>
-
-        <!-- Article 2 -->
-        <article class="blog-card" data-category="maintenance">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="CMMS Implementation" class="blog-img">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Maintenance</span>
-                    <span>June 12, 2026</span>
-                </div>
-                <h3 class="blog-title">Why Your CMMS Implementation Fails (And How to Fix It)</h3>
-                <p class="blog-excerpt">A deep dive into the common pitfalls of deploying a Computerized Maintenance Management System and how user adoption is the real key to ROI.</p>
-                <a href="article-cmms.html" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </article>
-
-        <!-- Article 3 -->
-        <article class="blog-card" data-category="automation">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="Industrial Automation" class="blog-img">
-            <div class="blog-content">
-                <div class="blog-meta">
-                    <span class="blog-category">Automation & Tech</span>
-                    <span>May 05, 2026</span>
-                </div>
-                <h3 class="blog-title">Bridging the Gap Between IT and OT in Modern Manufacturing</h3>
-                <p class="blog-excerpt">Exploring the critical intersection of Information Technology and Operational Technology in Industry 4.0, and how to secure industrial control systems.</p>
-                <a href="article-it-ot.html" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </article>
-    </div>
-</main>
+    
+    <header class="page-header">
+        <h1 class="page-title">Knowledge Hub</h1>
+        <p class="page-subtitle">Insights, case studies, and engineering best practices.</p>
+    </header>
+    
+    <main class="content-wrapper">
+        <div class="grid-layout"><article class="blog-card" data-category="maintenance">
+<img alt="Fast Food Maintenance Case Study" class="blog-img" loading="lazy" onerror="this.src='assets/images/blog/cmms.jpg'" src="assets/images/projects/mega_expansion.webp"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Case Study</span>
+<span>March 10, 2026</span>
 </div>
+<h3 class="blog-title">Saving 5M EGP in Maintenance for a Fast Food Chain</h3>
+<p class="blog-excerpt">How standardizing asset registries and consolidating suppliers saved millions in 15 branches.</p>
+<a class="read-more-btn" href="case-study-fastfood.html">Read Case Study <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+</div>
+</article>
+<article class="blog-card" data-category="automation">
+<img alt="Energy Audit Case Study" class="blog-img" loading="lazy" src="assets/images/blog/it-ot.jpg"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Case Study</span>
+<span>February 15, 2026</span>
+</div>
+<h3 class="blog-title">Reducing Electricity Bills by 22% for a Beverage Factory</h3>
+<p class="blog-excerpt">An energy audit that repaired leaks, corrected power factor, and replaced inefficient motors.</p>
+<a class="read-more-btn" href="case-study-beverage.html">Read Case Study <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+</div>
+</article>
+<article class="blog-card" data-category="maintenance">
+<img alt="OEE Metric" class="blog-img" loading="lazy" src="assets/images/blog/greenfield.jpg"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Maintenance</span>
+<span>January 20, 2026</span>
+</div>
+<h3 class="blog-title">OEE: The Ultimate Metric for Production Efficiency</h3>
+<p class="blog-excerpt">Learn how Overall Equipment Effectiveness reveals hidden capacity in your manufacturing plant.</p>
+<a class="read-more-btn" href="article-oee.html">Read Article <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+</div>
+</article>
+<article class="blog-card" data-category="leadership">
+<img alt="TCO Equation" class="blog-img" loading="lazy" src="assets/images/blog/cmms.jpg"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Leadership</span>
+<span>December 05, 2025</span>
+</div>
+<h3 class="blog-title">Repair or Replace? The TCO Equation That Decides</h3>
+<p class="blog-excerpt">Stop guessing and use the Total Cost of Ownership model to make asset replacement decisions.</p>
+<a class="read-more-btn" href="article-tco.html">Read Article <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+</div>
+</article>
+<article class="blog-card" data-category="case-study">
+<img alt="Cost Reduction Case Study" class="blog-img" loading="lazy" src="assets/images/blog/cmms.jpg"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Case Study</span>
+<span>August 01, 2026</span>
+</div>
+<h3 class="blog-title">Achieving EGP 60M Annual Savings Through Engineering Optimization</h3>
+<p class="blog-excerpt">How we successfully reduced annual engineering operating costs by 33% across 3 manufacturing plants.</p>
+<a class="read-more-btn" href="case-study-cost.html">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="blog-card" data-category="leadership">
+<img alt="Manufacturing Lessons" class="blog-img" loading="lazy" src="assets/images/blog/greenfield.jpg"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Leadership</span>
+<span>July 20, 2026</span>
+</div>
+<h3 class="blog-title">7 Lessons I Learned After 13 Years in Manufacturing Operations</h3>
+<p class="blog-excerpt">Operational performance is rarely the result of one department working harder. It is the result of functions working together.</p>
+<a class="read-more-btn" href="article-lessons.html">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="blog-card" data-category="leadership">
+<img alt="Leadership in Engineering" class="blog-img" loading="lazy" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;q=80&amp;w=800"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Leadership</span>
+<span>July 19, 2026</span>
+</div>
+<h3 class="blog-title">Building High-Performance Engineering Teams in Greenfield Projects</h3>
+<p class="blog-excerpt">The key challenges and strategies when assembling a new engineering team from scratch for a greenfield facility, focusing on culture and operational readiness.</p>
+<a class="read-more-btn" href="article-greenfield.html">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="blog-card" data-category="maintenance">
+<img alt="CMMS Implementation" class="blog-img" loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&amp;fit=crop&amp;q=80&amp;w=800"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Maintenance</span>
+<span>June 12, 2026</span>
+</div>
+<h3 class="blog-title">Why Your CMMS Implementation Fails (And How to Fix It)</h3>
+<p class="blog-excerpt">A deep dive into the common pitfalls of deploying a Computerized Maintenance Management System and how user adoption is the real key to ROI.</p>
+<a class="read-more-btn" href="article-cmms.html">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article>
+<article class="blog-card" data-category="automation">
+<img alt="Industrial Automation" class="blog-img" loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;q=80&amp;w=800"/>
+<div class="blog-content">
+<div class="blog-meta">
+<span class="blog-category">Automation &amp; Tech</span>
+<span>May 05, 2026</span>
+</div>
+<h3 class="blog-title">Bridging the Gap Between IT and OT in Modern Manufacturing</h3>
+<p class="blog-excerpt">Exploring the critical intersection of Information Technology and Operational Technology in Industry 4.0, and how to secure industrial control systems.</p>
+<a class="read-more-btn" href="article-it-ot.html">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</article></div>
+    </main>
+    
+    <footer class="footer">
+        <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem;">Ready to stop the bleed?</h3>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yahyatarekfarag/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:Y_Tarek91@yahoo.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/201080801708" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p style="color: var(--text-muted);">&copy; 2026 INJAZ Engineering Performance Solutions. All Rights Reserved.</p>
+    </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-    window.onload = function() {
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#ffffff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.3, "random": false },
-                "size": { "value": 2, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#00f2fe", "opacity": 0.2, "width": 1 },
-                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } }, "push": { "particles_nb": 3 } }
-            },
-            "retina_detect": true
-        });
-
-        // Filtering logic
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const blogCards = document.querySelectorAll('.blog-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active state
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                // Filter logic
-                const filterValue = btn.getAttribute('data-filter');
-                blogCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    };
-</script>
 </body>
 </html>
-
-
-

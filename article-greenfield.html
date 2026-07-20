@@ -29,7 +29,22 @@
         .project-vault-card, .blog-card, .cert-card { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 12px; transition: transform 0.3s, border-color 0.3s; padding: 2rem; display: flex; flex-direction: column; }
         .project-vault-card:hover, .blog-card:hover, .cert-card:hover { transform: translateY(-5px); border-color: var(--accent); }
         .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        @media (max-width: 768px) { .nav-links { display: none; } }
+        
+    
+        /* Mobile Menu Styles */
+        .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links { 
+                position: absolute; top: 100%; left: 0; width: 100%; 
+                background: rgba(15, 36, 64, 0.95); backdrop-filter: blur(10px);
+                flex-direction: column; padding: 2rem 0; gap: 1.5rem;
+                border-bottom: 1px solid var(--glass-border);
+                display: none; 
+            }
+            .nav-links.active { display: flex; }
+        }
+
     </style>
 
 </head>
@@ -39,6 +54,7 @@
         <div class="nav-brand">
             <i class="fa-solid fa-gear" style="color: var(--accent);"></i> INJAZ
         </div>
+        <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="projects.html">Success Portfolio</a>
@@ -106,6 +122,29 @@
         </div>
         <p style="color: var(--text-muted);">&copy; 2026 INJAZ Engineering Performance Solutions. All Rights Reserved.</p>
     </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            if(mobileBtn && navLinks) {
+                mobileBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Sticky Navbar transparency effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 50) {
+                    navbar.style.background = 'rgba(15, 36, 64, 0.85)';
+                } else {
+                    navbar.style.background = 'rgba(15, 36, 64, 1)';
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -59,9 +59,23 @@
         .social-links a:hover { color: var(--accent); }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
             .hero-title { font-size: 2.2rem; }
         }
+    
+        /* Mobile Menu Styles */
+        .mobile-menu-btn { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links { 
+                position: absolute; top: 100%; left: 0; width: 100%; 
+                background: rgba(15, 36, 64, 0.95); backdrop-filter: blur(10px);
+                flex-direction: column; padding: 2rem 0; gap: 1.5rem;
+                border-bottom: 1px solid var(--glass-border);
+                display: none; 
+            }
+            .nav-links.active { display: flex; }
+        }
+
     </style>
 </head>
 <body>
@@ -71,6 +85,7 @@
         <div class="nav-brand">
             <i class="fa-solid fa-gear" style="color: var(--accent); margin-left: 0.5rem;"></i> إنجاز
         </div>
+        <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
         <div class="nav-links">
             <a href="projects-ar.html">سابقة الأعمال</a>
             <a href="blog-ar.html">المدونة الهندسية</a>
@@ -155,19 +170,19 @@
         <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 2rem;">شركاء النجاح</h2>
         <!-- Marquee twice for seamless loop -->
         <div class="marquee">
-            <img src="assets/images/brands/BLABAN.webp" alt="B.Laban">
-            <img src="assets/images/brands/FARAG ALLAH.webp" alt="Faragalla">
-            <img src="assets/images/brands/BAHEG.webp" alt="Baheeg">
-            <img src="assets/images/brands/AM SHALTAT.webp" alt="Am Shaltat">
-            <img src="assets/images/brands/BLALM.webp" alt="Chicken Balalm">
-            <img src="assets/images/brands/MORTADELLA.webp" alt="Mortadella">
+            <img loading="lazy" decoding="async" src="assets/images/brands/BLABAN.webp" alt="B.Laban">
+            <img loading="lazy" decoding="async" src="assets/images/brands/FARAG ALLAH.webp" alt="Faragalla">
+            <img loading="lazy" decoding="async" src="assets/images/brands/BAHEG.webp" alt="Baheeg">
+            <img loading="lazy" decoding="async" src="assets/images/brands/AM SHALTAT.webp" alt="Am Shaltat">
+            <img loading="lazy" decoding="async" src="assets/images/brands/BLALM.webp" alt="Chicken Balalm">
+            <img loading="lazy" decoding="async" src="assets/images/brands/MORTADELLA.webp" alt="Mortadella">
             
-            <img src="assets/images/brands/BLABAN.webp" alt="B.Laban">
-            <img src="assets/images/brands/FARAG ALLAH.webp" alt="Faragalla">
-            <img src="assets/images/brands/BAHEG.webp" alt="Baheeg">
-            <img src="assets/images/brands/AM SHALTAT.webp" alt="Am Shaltat">
-            <img src="assets/images/brands/BLALM.webp" alt="Chicken Balalm">
-            <img src="assets/images/brands/MORTADELLA.webp" alt="Mortadella">
+            <img loading="lazy" decoding="async" src="assets/images/brands/BLABAN.webp" alt="B.Laban">
+            <img loading="lazy" decoding="async" src="assets/images/brands/FARAG ALLAH.webp" alt="Faragalla">
+            <img loading="lazy" decoding="async" src="assets/images/brands/BAHEG.webp" alt="Baheeg">
+            <img loading="lazy" decoding="async" src="assets/images/brands/AM SHALTAT.webp" alt="Am Shaltat">
+            <img loading="lazy" decoding="async" src="assets/images/brands/BLALM.webp" alt="Chicken Balalm">
+            <img loading="lazy" decoding="async" src="assets/images/brands/MORTADELLA.webp" alt="Mortadella">
         </div>
     </section>
 
@@ -205,5 +220,28 @@
             }
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            if(mobileBtn && navLinks) {
+                mobileBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Sticky Navbar transparency effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 50) {
+                    navbar.style.background = 'rgba(15, 36, 64, 0.85)';
+                } else {
+                    navbar.style.background = 'rgba(15, 36, 64, 1)';
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

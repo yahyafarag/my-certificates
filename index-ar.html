@@ -77,6 +77,17 @@
             .nav-links.active { display: flex; }
         }
 
+    
+        .media-section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .media-title { text-align: center; font-size: 2.5rem; color: #fff; margin-bottom: 2rem; font-weight: 800; }
+        .media-title span { color: var(--accent); }
+        .video-container { width: 100%; border-radius: 15px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-bottom: 4rem; }
+        .video-container video { width: 100%; display: block; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .gallery-item { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border); transition: transform 0.3s; }
+        .gallery-item:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+    
     </style>
 <meta content="حلول الأداء الهندسي والصيانة الصناعية والأتمتة. استشارات هندسية احترافية لزيادة الأرباح وتقليل الهدر مع م. يحيى طارق." name="description"/><link href="https://yahyafarag.github.io/yahya-web-site/index-ar.html" rel="canonical"/><link href="https://yahyafarag.github.io/yahya-web-site/index-ar.html" hreflang="ar" rel="alternate"/><link href="https://yahyafarag.github.io/yahya-web-site/index.html" hreflang="en" rel="alternate"/><meta content="website" property="og:type"/><meta content="https://yahyafarag.github.io/yahya-web-site/index-ar.html" property="og:url"/><meta content="إنجاز - لحلول الأداء الهندسي" property="og:title"/><meta content="حلول الأداء الهندسي والصيانة الصناعية والأتمتة. استشارات هندسية احترافية لزيادة الأرباح وتقليل الهدر مع م. يحيى طارق." property="og:description"/><meta content="https://yahyafarag.github.io/yahya-web-site/assets/images/profile/yahya-logo.jpeg" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://yahyafarag.github.io/yahya-web-site/index-ar.html" name="twitter:url"/><meta content="إنجاز - لحلول الأداء الهندسي" name="twitter:title"/><meta content="حلول الأداء الهندسي والصيانة الصناعية والأتمتة. استشارات هندسية احترافية لزيادة الأرباح وتقليل الهدر مع م. يحيى طارق." name="twitter:description"/><meta content="https://yahyafarag.github.io/yahya-web-site/assets/images/profile/yahya-logo.jpeg" name="twitter:image"/><script type="application/ld+json">
     {
@@ -192,7 +203,24 @@
 <img alt="Mortadella" decoding="async" loading="lazy" src="assets/images/brands/MORTADELLA.webp"/>
 </div>
 </section>
-<footer class="footer">
+
+    <section class="media-section fade-in-section">
+        <h2 class="media-title">شاهد إنجاز في <span>أرض الواقع</span></h2>
+        <div class="video-container">
+            <video controls poster="assets/images/gallery/img1.jpeg">
+                <source src="assets/videos/injaz-promo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <h2 class="media-title" style="margin-top: 2rem;">التميز <span>الهندسي</span></h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="assets/images/gallery/img1.jpeg" alt="شاشات تحكم ولوحات كهربائية" loading="lazy"></div>
+            <div class="gallery-item"><img src="assets/images/gallery/img2.jpeg" alt="مضخات الطرد المركزي في مصنع كيماويات" loading="lazy"></div>
+            <div class="gallery-item"><img src="assets/images/gallery/img3.jpeg" alt="لوحات تحسين معامل القدرة" loading="lazy"></div>
+        </div>
+    </section>
+    
+    <footer class="footer">
 <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.8rem;">هل أنت مستعد لإيقاف النزيف؟</h3>
 <div class="social-links">
 <a href="https://www.linkedin.com/in/yahyatarekfarag/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>

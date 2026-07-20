@@ -253,6 +253,7 @@ body[dir="ltr"] h1, body[dir="ltr"] h2 {
 .hero-title {
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
+  color: var(--c-white);
 }
 
 .hero-subtitle {

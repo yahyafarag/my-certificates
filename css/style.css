@@ -437,3 +437,9 @@ body[dir="rtl"] .stat-item:last-child {
     flex-direction: column;
   }
 }
+
+/* Fix for page-header title visibility */
+.page-header h1 {
+  color: var(--c-white);
+}
+

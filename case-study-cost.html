@@ -127,7 +127,45 @@
         "jobTitle": "General Manager of Engineering"
       }
     }
-    </script></head>
+    </script>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#F28C28">
+    
+    <!-- Google Analytics (Placeholder) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <style>
+        .cookie-banner {
+            position: fixed;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            background: #0F2440;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            z-index: 99999;
+            transition: bottom 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+        }
+        .cookie-banner.show { bottom: 0; }
+        .cookie-btn { background: #F28C28; color: #fff; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .cookie-btn:hover { background: #d9781f; }
+        .cookie-link { color: #F28C28; text-decoration: underline; }
+    </style>
+</head>
 <body style="">
 <nav class="navbar" style="background: rgba(15, 36, 64, 1); position: sticky;">
 <div class="nav-brand">
@@ -265,5 +303,33 @@
         document.addEventListener('DOMContentLoaded', animateCounters);
     </script>
     
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        We use cookies to enhance your experience and analyze traffic. <a href="privacy-policy.html" class="cookie-link">Learn more</a>. <button class="cookie-btn" id="acceptCookies">Accept</button>
+    </div>
+    
+    <!-- Service Worker and Cookie Script -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW failed', err));
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const banner = document.getElementById('cookieBanner');
+            const btn = document.getElementById('acceptCookies');
+            if(!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => banner.classList.add('show'), 1500);
+            }
+            btn.addEventListener('click', () => {
+                localStorage.setItem('cookiesAccepted', 'true');
+                banner.classList.remove('show');
+            });
+        });
+    </script>
 </body>
 </html>
